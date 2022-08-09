@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Predictive Analysis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    </head>
+    <style>
+        body {
+            background:grey;
+            }
+    </style>
+    <body>
+        {% block content %}
+            {% include 'IndexBar.html' %}
+            {% include 'MessagePage.html' %}
+            {% include  main_template %}
+        {% endblock %}
+    </body>
+</html>

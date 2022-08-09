@@ -1,0 +1,129 @@
+{% load static %}
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		{% block content %}
+		<form method='post'>
+			{% csrf_token %}
+		<!-- ***  Company Information section ....*** -->
+		<div class="wrapper">
+			<div class="bg-white" id="upper-section">
+				<h2><strong>Car Price Prediction</strong></h2>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="bg-white" id="upper-section">
+				<!-- Company Information section ...-->
+				<h5>Car Information</h5>
+				<div class="row pt-3">
+					<!-- Laptop company name block .-->
+					<div class="col-sm-6">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Company Name</p>
+							<select name="company" id="storename" class="bg-light">
+								{% for company in companys %}
+									<option value={{company}}>{{company}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- end of Laptop company name block .-->
+					<!-- Laptop product name block .-->
+					<div class="col-sm-6 mt-sm-0 mt-3">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Product Name</p>
+							<select name="name" id="emp" class="bg-light">
+								{% for name in names %}
+									<option value={{name}}>{{name}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- Laptop product name block .-->
+				</div>
+			</div>
+			<!-- end of the company information... -->
+
+			<!-- ***  Company Information section ....*** -->
+		<div class="wrapper">
+			<div class="bg-white" id="upper-section">
+				<!-- Company Information section ...-->
+				<h5>Model Information</h5>
+				<div class="row pt-3">
+					<!-- Laptop company name block .-->
+					<div class="col-sm-6">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Year</p>
+							<select name="year" id="storename" class="bg-light">
+								{% for year in years %}
+									<option value={{year}}>{{year}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- end of Laptop company name block .-->
+					<!-- Laptop product name block .-->
+					<div class="col-sm-6 mt-sm-0 mt-3">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>KMS Driven</p>
+							<select name="kms_driven" id="emp" class="bg-light">
+								{% for km in kms_drivens %}
+									<option value={{km}}>{{km}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- Laptop product name block .-->
+				</div>
+			</div>
+			<!-- end of the company information... -->
+			
+		<!-- SELECT THE RAM CONFIGURATION -->
+			<div class="mt-3 bg-white" id="middle-section">
+		
+				<h5 class="pt-4">Select the Fuel Configuration</h5>
+				<div class="row pt-1">
+					<div class="col-md-4">
+						<div class="options">
+							<label class="option">Diesel
+								<input type="radio" name="fuel_type" value="Diesel">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">LPG
+								<input type="radio" name="fuel_type" value="LPG">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">Petrol
+								<input type="radio" name="fuel_type" value="Petrol" checked>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+</div>
+			<!-- END OF RAM CONFIGURATION ........-->
+			<div class="wrapper">
+			<div class="mt-3 bg-white" id="lower-section">
+				<div class="row">
+					<div class="col-md-4">
+						<input type="submit" class="btn" value="Predict Price">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	{% endblock %}
+	</body>
+</html>
+

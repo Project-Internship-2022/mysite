@@ -1,0 +1,285 @@
+{% load static %}
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		{% block content %}
+		<form method='post'>
+			{% csrf_token %}
+		<!-- ***  Company Information section ....*** -->
+		<div class="wrapper">
+
+			<div class="bg-white" id="upper-section">
+				<h2><strong>Laptop Price Prediction</strong></h2>
+				</div>
+		</div>
+		<div class="wrapper">
+			<div class="bg-white" id="upper-section">
+				<!-- Company Information section ...-->
+				<h5>Laptop Information</h5>
+				<div class="row pt-3">
+					<!-- Laptop company name block .-->
+					<div class="col-sm-6">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Company Name</p>
+							<select name="company" id="storename" class="bg-light">
+								{% for company in companys %}
+									<option value={{company}}>{{company}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- end of Laptop company name block .-->
+					<!-- Laptop product name block .-->
+					<div class="col-sm-6 mt-sm-0 mt-3">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Product</p>
+							<select name="product" id="emp" class="bg-light">
+								{% for product in products %}
+									<option value={{product}}>{{product}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- Laptop product name block .-->
+				</div>
+			</div>
+			<!-- end of the company information... -->
+
+
+			<!-- ***  Company Information section ....*** -->
+		<div class="wrapper">
+			<div class="bg-white" id="upper-section">
+				<!-- Company Information section ...-->
+				<h5>Model Information</h5>
+				<div class="row pt-3">
+					<!-- Laptop company name block .-->
+					<div class="col-sm-6">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Model Name</p>
+							<select name="model" id="storename" class="bg-light">
+								{% for model in typenames %}
+									<option value={{model}}>{{model}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- end of Laptop company name block .-->
+					<!-- Laptop product name block .-->
+					<div class="col-sm-6 mt-sm-0 mt-3">
+						<div id="dropdown" class="bg-light rounded border">
+							<p>Operating System</p>
+							<select name="os" id="emp" class="bg-light">
+								{% for os in opsyss %}
+									<option value={{os}}>{{os}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<!-- Laptop product name block .-->
+				</div>
+			</div>
+			<!-- end of the company information... -->
+			
+			<!-- Processor Information Block  -->
+			<div class="wrapper">
+				<div class="bg-white" id="upper-section">
+					<h5>Processor Information</h5>
+					<div class="row pt-3">
+						<div class="col-sm-6">
+							<div id="dropdown" class="bg-light rounded border">
+								<p>CPU Configuration</p>
+								<select name="cpu" id="emp" class="bg-light">
+									{% for cpu in cpus %}
+										<option value={{cpu}}>{{cpu}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 mt-sm-0 mt-3">
+							<div id="dropdown" class="bg-light rounded border">
+								<p>GPU Configuration</p>
+								<select name="gpu" id="emp" class="bg-light">
+									{% for gpu in gpus %}
+										<option value={{gpu}}>{{gpu}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+			<!-- end of Processor Information Block  -->
+
+		<!-- SELECT THE RAM CONFIGURATION -->
+			<div class="mt-3 bg-white" id="middle-section">
+		
+				<h5 class="pt-4">Select the RAM Configuration</h5>
+				<div class="row pt-1">
+					<div class="col-md-4">
+						<div class="options">
+							<label class="option">2GB
+								<input type="radio" name="ram" value="2GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">4GB
+								<input type="radio" name="ram" value="4GB" checked>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">6GB
+								<input type="radio" name="ram" value="6GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row pt-1">
+					<div class="col-md-4">
+						<div class="options">
+							<label class="option">8GB
+								<input type="radio" name="ram" value="8GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">12GB
+								<input type="radio" name="ram" value="12GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">16GB
+								<input type="radio" name="ram" value="16GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row pt-1">
+					<div class="col-md-4">
+						<div class="options">
+							<label class="option">24GB
+								<input type="radio" name="ram" value="24GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">32GB
+								<input type="radio" name="ram" value="32GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 mt-md-0 mt-3">
+						<div class="options">
+							<label class="option">64GB
+								<input type="radio" name="ram" value="64GB">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END OF RAM CONFIGURATION ........-->
+
+			<div class="wrapper">
+			<!-- Memory conffiguration Block  -->
+			<!-- Memory Information configuration -->
+			<div class="mt-3 bg-white" id="middle-section">
+			<div class="d-sm-flex flex-sm-row align-items-center">
+				<h5>Memory Configuration</h5>
+			</div>
+			<p class="pt-2 text-muted text-justify">
+				Select the Memory configuration
+			</p>
+			<select name="memory" id="emp" class="bg-light rounded border">
+				{% for memory in memorys %}
+					<option value={{memory}}>{{memory}}</option>
+				{% endfor %}
+			</select>
+			</div>
+
+
+			</div>
+			<!-- end of memory information configuration -->
+			<!-- End of Memory Configuration Block  -->
+
+			
+			<!-- Screen Resolution Information Block  -->
+			<div class="wrapper">
+				<div class="bg-white" id="upper-section">
+					<h5>Screen and Display Information</h5>
+					<div class="row pt-3">
+						<div class="col-sm-6">
+							<div id="dropdown" class="bg-light rounded border">
+								<p>Screen Resolution</p>
+								<select name="resolution" id="emp" class="bg-light">
+									{% for resolution in screenresolutions %}
+										<option value={{resolution}}>{{resolution}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6 mt-sm-0 mt-3">
+							<div id="dropdown" class="bg-light rounded border">
+								<p>Inches</p>
+								<select name="inch" id="emp" class="bg-light">
+									{% for inch in inchess %}
+										<option value={{inch}}>{{inch}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+	
+					</div>
+					</div>
+					<div class="wrapper">
+					<div class="mt-3 bg-white" id="middle-section">
+						<div class="d-sm-flex flex-sm-row align-items-center">
+							<h5>Weight Configuration</h5>
+						</div>
+						<p class="pt-2 text-muted text-justify">
+							Select the weight of the configuration Model.
+						</p>
+						<select name="weight" id="emp" class="bg-light rounded border">
+							{% for weight in weights %}
+								<option value={{weight}}>{{weight}}</option>
+							{% endfor %}
+						</select>
+						</div>
+				</div>
+			<!-- end of Screen Resolution Information Block  -->
+
+			<div class="mt-3 bg-white" id="lower-section">
+				
+				
+				<div class="row">
+					
+					<div class="col-md-4">
+						<input type="submit" class="btn" value="Predict Price">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+		{% endblock %}
+	</body>
+</html>
+

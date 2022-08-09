@@ -1,0 +1,98 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        {% block content %}
+		<form method='post'>
+			{% csrf_token %}
+            <div class="wrapper">
+                <div class="bg-white" id="upper-section">
+                    <h2><strong>Fill this Form to recieve updates</strong></h2>
+                </div>
+            </div>
+        <div class="wrapper">
+            
+            <div class="mt-3 bg-white" id="middle-section">
+                <h5>UserName</h5>
+                <div class="rounded">
+                    <input type="text" name="username" class="form-control bg-light income" style="width:100%;" placeholder="John Cena">
+                </div>
+            </div>
+            <div class="mt-3 bg-white" id="middle-section">
+                <div class="d-sm-flex flex-sm-row align-items-center">
+                    <h5>Recieve Updates and Notifications</h5>
+                </div>
+                <p class="pt-2 text-muted text-justify">
+                    Our latest updates will be communicating through this email address.
+                </p>
+                <div class="rounded">
+                    <input type="email" name="emailAddr" class="form-control bg-light income" style="width:100%;" placeholder="JohnCena@gmail.com">
+                </div>
+                <h5 class="pt-4">How often do you get paid?</h5>
+                <div class="row pt-1">
+                    <div class="col-md-4">
+                        <div class="options">
+                            <label class="option">Weekly
+                                <input type="radio" name="updatesFrequency" value="1" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-md-0 mt-3">
+                        <div class="options">
+                            <label class="option">Every Other Week
+                                <input type="radio" name="updatesFrequency" value="2">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-md-0 mt-3">
+                        <div class="options">
+                            <label class="option">Twice a Month
+                                <input type="radio" name="updatesFrequency" value="3">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-md-6">
+                        <div class="options">
+                            <label class="option">Day of the Month
+                                <input type="radio" name="updatesFrequency" value="4">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <div class="options">
+                            <label class="option">Weekday of the Month
+                                <input type="radio" name="updatesFrequency" value="5">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                
+			<div class="mt-3 bg-white" id="lower-section">
+				
+				
+				<div class="row">
+					
+					<div class="col-md-4">
+						<input type="submit" class="btn" value="Recieve Updates">
+					</div>
+				</div>
+			</div>
+		</div>
+            
+                </div>
+            </div>
+        </div>
+        </form>
+        {% endblock %}
+    </body>
+</html>
